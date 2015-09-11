@@ -4,10 +4,8 @@ var path = require('path');
 var async = require('async');
 
 function replaceText(dir, data, callback) {
-  data = data.replace('# RewriteBase /', 'RewriteBase /');
-  fs.writeFile(path.join(dir, '.htaccess'), data, {
-    encoding: 'utf8'
-  }, callback);
+  data = data.replace(new RegExp('# RewriteBase /', 'gm'), 'RewriteBase /');
+  fs.writeFile(path.join(dir, '.htaccess'), data, callback);
 }
 
 module.exports = function(dir, callback) {

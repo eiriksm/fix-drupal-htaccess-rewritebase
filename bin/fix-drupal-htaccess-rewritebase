@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var dir = process.cwd();
+require('../index')(dir, function(err) {
+  if (err) throw err;
+  console.log('.htaccess potentially updated!');
+})

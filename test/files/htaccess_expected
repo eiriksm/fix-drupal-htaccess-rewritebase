@@ -1,0 +1,17 @@
+# Regular text should not get replaced.
+test 123
+
+# Already uncommented should not get replaced.
+RewriteBase /
+
+# Extra space. Should not get replaced.
+#  RewriteBase /
+
+# Wrong case.
+# Rewritebase /
+
+# Should get replaced.
+RewriteBase /
+
+# This should also get replaced.
+RewriteBase /
