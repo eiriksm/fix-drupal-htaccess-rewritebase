@@ -5,5 +5,5 @@ node_js:
   - "io.js"
 sudo: false
 after_success:
-  make test-cov
-  cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - make test-cov
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
