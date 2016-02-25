@@ -4,7 +4,7 @@ var path = require('path');
 var async = require('async');
 
 function replaceText(dir, data, callback) {
-  data = data.replace(new RegExp('# RewriteBase /', 'gm'), 'RewriteBase /');
+  data = data.replace(/# RewriteBase \/$/gm, 'RewriteBase /');
   fs.writeFile(path.join(dir, '.htaccess'), data, callback);
 }
 
@@ -16,5 +16,3 @@ module.exports = function(dir, callback) {
     replaceText.bind(null, dir)
   ], callback);
 };
-
-
