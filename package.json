@@ -22,7 +22,7 @@
   "homepage": "https://github.com/eiriksm/fix-drupal-htaccess-rewritebase#readme",
   "devDependencies": {
     "coveralls": "^2.11.4",
-    "eslint": "^2.5.0",
+    "eslint": "^3.0.1",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.0",
     "should": "^9.0.2"
