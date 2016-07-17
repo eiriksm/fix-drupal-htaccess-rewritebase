@@ -1,8 +1,17 @@
 language: node_js
 node_js:
-  - "0.10"
-  - "4.0"
+- 4
+- 6
+- node
 sudo: false
 after_success:
-  - make test-cov
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+- make test-cov
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+deploy:
+  provider: npm
+  email: eirik@morland.no
+  api_key:
+    secure: tqzfm+XDbGM93eTXhUXEC5O2WF0fZnCrpEQ0j2lwno27VVAB2dZkvv5utOjzpwM8GMhDUqYVeGAvyNx27a7s7l7MGglqXG9jqdImWjR4+SXdznzJJ2pV3QI2yrJRQFy4SVHAtAtxw5Tm8xNKfoymtZy2EWEci4bX4mTMDep38VcpJdkgbV/8TtiZWMAv3hZ88TD8ZBJ+GeO4VE+gr5/wfOWOAJFr2pdo4lxUhWO6ElefFVmSMsEaJmxVmxCfVsNK6uSr2l1jjqhU0uma1nI+U/CxpduLcyHr2WE8O9XOH81zfgdbUL9StbHS24XbvJZdAdONjcUBHeMIFyxQhhQzHC2tzo/QEBZXdB9aWuNqw+xO4eo6JqcjbLwiblTBb3i2TkCGwOEAJeCk4RHX9eV2qSnyvNBpl/w8fSyYJhxFi1czNzlOtZ5125yTPwXdLOVVY1mSIN4efwpgziSLOFwZlMPRcllB/QtwQQngUNzeefQcrc2eI0Le7GfoCrkYfaLumYQaJZrtfRMlFoZF1QTWZaHGUxWQ4hFnb+8l77+LzFHCoJhkvYHYyweg+Dm6DDzq8P0CbaArnbUz0e9fPbhGFvn9wJTpoRIQIOb0bgsZkKOyj9TKI1h7AR6IEzuVbTHwNMYCy08EOInKfFJkhgM9W/GamfcECz37BWXEUmw1+1k=
+  on:
+    tags: true
+    repo: eiriksm/fix-drupal-htaccess-rewritebase
