@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/eiriksm/fix-drupal-htaccess-rewritebase#readme",
   "devDependencies": {
-    "coveralls": "^2.11.4",
+    "coveralls": "^3.0.0",
     "eslint": "^4.1.0",
     "istanbul": "^0.4.1",
     "mocha": "^3.0.0",
